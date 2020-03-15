@@ -1,0 +1,40 @@
+a-train% ./xyz2llh
+xyz2llh(1.5 02/02/07): Converts X Y Z to lat, lon and ellipsoid hgt
+Usage: xyz2llh X Y Z
+  options:
+           -d print deg min sec rather than decimal degrees.
+           -h prints this message.
+           -r = input coordinates are lat, lon, hgt,
+                output coordinates will be X, Y, Z.
+           -w longitudes are west rather than east longitude.
+
+
+
+
+a-train% cat run1
+#
+./xyz2llh -w -r 38.889467 077.035239 149.2
+
+
+a-train% ./run1
+ 1115287.6047 -4844432.9443  3982867.0809
+
+
+
+
+
+a-train% cat run2
+#
+./xyz2llh -w -d 1149298.644 -4827706.774 3993217.203
+a-train% ./run2
+ 39  0 37.03253  76 36 33.28940   20.25058917
+
+
+
+
+a-train% cat run3
+#
+./xyz2llh -w -r -14.5480481694 168.1455008722 25.61
+
+a-train% ./run3
+-6043268.9652 -1268505.0274 -1591753.0728
